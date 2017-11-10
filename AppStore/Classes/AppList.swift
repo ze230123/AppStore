@@ -7,28 +7,41 @@
 //
 
 import UIKit
+import MJRefresh
 
 let dict: [String: Any] = [
     "api_token": "62d9c2178a6aaa6d0b6852b783c0d79a"
 ]
 let appid = "59f86639ca87a854000002a6"
-//curl http://api.fir.im/apps/latest/59f86639ca87a854000002a6api_token=62d9c2178a6aaa6d0b6852b783c0d79a
+
 class AppList: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var items: [AppModel] = [] {
+    var items: [CustomAppModel] = [] {
         didSet {
             collectionView.reloadData()
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
+
+    @objc func loadNewData() {
         let url = "http://api.fir.im/apps"
-        Service.getList(url: url, parameters: dict).then { (list: ListModel<AppModel>) -> Void in
+        Service.getCustomList(url: url, parameters: dict).then { (list: CustomListModel<CustomAppModel>) -> Void in
             self.items = list.items.filter { $0.name != "AppStore"}
         }.catch { (error) in
-            print(error)
+            printLog(error)
+        }.always {
+            self.collectionView.mj_header.endRefreshing()
         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(loadNewData))
+        collectionView.mj_header = header
+
+        loadNewData()
+
         let uploadUrl = "http://api.fir.im/apps/latest/\(appid)"
         Service.get(url: uploadUrl, parameters: dict).then { (update: UploadModel) -> Void in
             if update.isGreater(Constants.versionNumber) {

@@ -7,6 +7,50 @@
 //
 import ObjectMapper
 
+struct CustomAppModel: Codable {
+    var bundleId: String
+    var createdDate: TimeInterval
+    var marketUrl: String
+    var expiredDate: TimeInterval
+    var iconUrl: String
+    var id: String
+    var name: String
+    var short: String
+    var type: String
+    var updateDate: TimeInterval
+    var userId: String
+    var release: CustomReleaseModel
+
+    enum CodingKeys: String, CodingKey {
+        case bundleId = "bundle_id"
+        case createdDate = "created_at"
+        case marketUrl = "custom_market_url"
+        case expiredDate = "expired_at"
+        case iconUrl = "icon_url"
+        case id
+        case name
+        case short
+        case type
+        case updateDate = "updated_at"
+        case userId = "user_id"
+        case release = "master_release"
+    }
+}
+
+struct CustomReleaseModel: Codable {
+    var build: String
+    var createDate: TimeInterval
+    var distributionName: String
+    var version: String
+    
+    enum CodingKeys: String, CodingKey {
+        case build
+        case createDate = "created_at"
+        case distributionName = "distribution_name"
+        case version
+    }
+}
+
 struct AppModel: Mappable {
     var bundleId: String = ""
     /// 创建日期

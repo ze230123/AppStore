@@ -8,6 +8,7 @@ PODS:
   - AlicloudUtils (1.2.2):
     - AlicloudUT
     - AlicloudUTDID
+  - MJRefresh (3.1.14)
   - Moya (9.0.0):
     - Moya/Core (= 9.0.0)
   - Moya/Core (9.0.0):
@@ -26,6 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - AlicloudPush
+  - MJRefresh
   - Moya
   - ObjectMapper
   - PromiseKit/Alamofire
@@ -38,6 +40,7 @@ SPEC CHECKSUMS:
   AlicloudUT: 9f20dcfd2753de09261b6c279245da1650a34932
   AlicloudUTDID: f5a7bc1420c5f83e3bd40296e5ab2e5a804a12f8
   AlicloudUtils: 2437ae7fd2b39343539e8f48aa1f7bf6f5a6cff1
+  MJRefresh: 6642e35b3227a5447b9fd5e17c552c90196c9859
   Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   PromiseKit: fbb52a0d154402c57eeb6eccd36dd7724fcf6117
@@ -45,6 +48,6 @@ SPEC CHECKSUMS:
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 265aeb8e4d47da7e2186e2b035fddb975eb97bd7
+PODFILE CHECKSUM: feb4ebd1c8c8d0c873ad7d7bc517818c6cb0ce34
 
 COCOAPODS: 1.3.1

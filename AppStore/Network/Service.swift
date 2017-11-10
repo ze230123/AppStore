@@ -35,4 +35,35 @@ struct Service {
             })
         }
     }
+
+    static func getCustom<T: Codable>(url: URLConvertible, parameters: [String: Any]? = nil) -> Promise<T> {
+        return Promise<T> { fulfill, reject in
+            Alamofire.request(url, method: .get, parameters: parameters).responseData { (response) in
+                switch response.result {
+                case let .success(data):
+                    print(String(data: data, encoding: .utf8) ?? "没有数据")
+                    do {
+                        let model = try JSONDecoder().decode(T.self, from: data)
+                        fulfill(model)
+                    } catch {
+                        // 异常处理
+                        printLog(error.localizedDescription)
+                    }
+                case let .failure(error):
+                    reject(error)
+                }
+            }
+        }
+    }
+
+    static func getCustomList<T: Codable>(url: URLConvertible, parameters: [String: Any]? = nil) -> Promise<CustomListModel<T>> {
+        return Promise<CustomListModel<T>> { fulfill, reject in
+            getCustom(url: url, parameters: parameters).then(execute: { (model: CustomListModel<T>) -> Void in
+
+                fulfill(model)
+            }).catch(execute: { (error) in
+                reject(error)
+            })
+        }
+    }
 }

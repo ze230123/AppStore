@@ -22,3 +22,15 @@ struct ListModel<M: Mappable>: Mappable {
         items       <- map["items"]
     }
 }
+
+struct CustomListModel<M: Codable>: Codable {
+    var count: Int
+    var pageSize: Int
+    var items: [M]
+
+    enum CodingKeys: String, CodingKey {
+        case count = "apps_count"
+        case pageSize = "page_size"
+        case items
+    }
+}

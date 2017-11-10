@@ -10,7 +10,7 @@ import SDWebImage
 
 class ApplistCell: UICollectionViewCell {
 
-    var model: AppModel! {
+    var model: CustomAppModel! {
         didSet {
             reload()
         }

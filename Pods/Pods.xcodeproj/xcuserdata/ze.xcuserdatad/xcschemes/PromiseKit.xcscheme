@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "0910"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55FAE6D46D61F95A637564CB82442011"
+               BlueprintIdentifier = "144269E9FC76F259F493550254CB91E4"
                BuildableName = "PromiseKit.framework"
                BlueprintName = "PromiseKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55FAE6D46D61F95A637564CB82442011"
+            BlueprintIdentifier = "144269E9FC76F259F493550254CB91E4"
             BuildableName = "PromiseKit.framework"
             BlueprintName = "PromiseKit"
             ReferencedContainer = "container:Pods.xcodeproj">

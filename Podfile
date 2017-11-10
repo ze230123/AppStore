@@ -13,4 +13,5 @@ target "AppStore" do
     pod 'PromiseKit/Alamofire'      # https://github.com/mxcl/PromiseKit
     pod 'SnapKit'                   # https://github.com/SnapKit/SnapKit
     pod 'AlicloudPush'
+    pod 'MJRefresh'
 end
