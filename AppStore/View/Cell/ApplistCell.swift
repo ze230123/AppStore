@@ -32,7 +32,7 @@ class ApplistCell: UICollectionViewCell {
     private func reload() {
         imageView.sd_setImage(with: URL(string: model.iconUrl),
                               placeholderImage: #imageLiteral(resourceName: "icon"),
-                              options: .avoidAutoSetImage,
+                              options: .transformAnimatedImage,
                               completed: nil)
 
         titleLabel.text = model.name
