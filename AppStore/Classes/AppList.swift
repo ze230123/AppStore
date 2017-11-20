@@ -16,6 +16,7 @@ let appid = "59f86639ca87a854000002a6"
 
 class AppList: UIViewController {
 
+    @IBOutlet weak var leftButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     var items: [CustomAppModel] = [] {
         didSet {
@@ -36,7 +37,8 @@ class AppList: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        leftButton.title = "v\(Constants.versionNumber)"
         let header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(loadNewData))
         collectionView.mj_header = header
 
