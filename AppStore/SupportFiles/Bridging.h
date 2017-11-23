@@ -9,4 +9,3 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CloudPushSDK/CloudPushSDK.h>
-#import "WXApi.h"
