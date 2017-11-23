@@ -31,6 +31,6 @@ struct CustomListModel<M: Codable>: Codable {
     enum CodingKeys: String, CodingKey {
         case count = "apps_count"
         case pageSize = "page_size"
-        case items
+        case items = "items"
     }
 }

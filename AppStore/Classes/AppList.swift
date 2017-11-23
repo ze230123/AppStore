@@ -44,14 +44,14 @@ class AppList: UIViewController {
 
         loadNewData()
 
-        let uploadUrl = "http://api.fir.im/apps/latest/\(appid)"
-        Service.get(url: uploadUrl, parameters: dict).then { (update: UploadModel) -> Void in
-            if update.isGreater(Constants.versionNumber) {
-                self.showAlert(update: update)
-            }
-            }.catch { (error) in
-                printLog(error)
-        }
+//        let uploadUrl = "http://api.fir.im/apps/latest/\(appid)"
+//        Service.get(url: uploadUrl, parameters: dict).then { (update: UploadModel) -> Void in
+//            if update.isGreater(Constants.versionNumber) {
+//                self.showAlert(update: update)
+//            }
+//            }.catch { (error) in
+//                printLog(error)
+//        }
     }
     func showAlert(update: UploadModel) {
         let alert = UIAlertController(title: "版本更新", message: "更新版本：v\(update.versionShort)\n\(update.changeLog)", preferredStyle: .alert)

@@ -104,6 +104,8 @@ export_ipa_path="$export_path"
 ipa_name="$scheme_name-v$bundle_version.$bundle_build_version"
 
 echo "$ipa_name"
+echo "$display_name"
+
 # AdHoc,AppStore,Enterprise三种打包方式的区别: http://blog.csdn.net/lwjok2007/article/details/46379945
 echo "\033[36;1m请选择打包方式(输入序号,按回车即可) \033[0m"
 echo "\033[33;1m1. AdHoc       \033[0m"

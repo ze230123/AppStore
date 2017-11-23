@@ -48,6 +48,7 @@ struct Service {
                     } catch {
                         // 异常处理
                         printLog(error.localizedDescription)
+                        reject(error)
                     }
                 case let .failure(error):
                     reject(error)

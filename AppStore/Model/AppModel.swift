@@ -40,7 +40,7 @@ struct CustomAppModel: Codable {
 struct CustomReleaseModel: Codable {
     var build: String
     var createDate: TimeInterval
-    var distributionName: String
+    var distributionName: String?
     var version: String
     
     enum CodingKeys: String, CodingKey {

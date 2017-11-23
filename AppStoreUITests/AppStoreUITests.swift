@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import AppStore
 
 class AppStoreUITests: XCTestCase {
         

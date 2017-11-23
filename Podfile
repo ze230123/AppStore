@@ -14,4 +14,11 @@ target "AppStore" do
     pod 'SnapKit'                   # https://github.com/SnapKit/SnapKit
     pod 'AlicloudPush'
     pod 'MJRefresh'
+
+    target 'AppStoreTests' do
+        inherit! :search_paths
+    end
+    target 'AppStoreUITests' do
+        inherit! :search_paths
+    end
 end
